@@ -1,0 +1,16 @@
+<%if(data.length>0){%>
+<%for(let i=0;i< data.length;i++){%>
+<tr>
+    <td><%=data[i].sname%></td>
+    <td><%=data[i].sexs%></td>
+    <td><%=data[i].sage%></td>
+    <td><%=data[i].sages%></td>
+    <td>
+        <a href="/users/del/<%=data[i].sid%>" class="btn btn-danger">删除</a>
+        <a href="/users/edit/<%=data[i].sid%>" class="btn btn-success">编辑</a>
+    </td>
+</tr>
+<%}%>
+<%}else{%>
+<tr><td colspan="5">没有更多内容了...</td></tr>
+<%}%>

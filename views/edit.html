@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+<style>
+    h5{
+        font-size: 24px;
+        color: #333333;
+        line-height: 100px;
+        text-align: center;
+    }
+</style>
+<body>
+<main class="container">
+    <h5>编辑用户</h5>
+    <form method="post" action="/users/editCon/<%=data[0].sid%>">
+        <div class="form-group">
+            <label for="exampleInputEmail1">姓名</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="name" name="sname" value="<%=data[0].sname%>">
+        </div>
+        <div class="form-group">
+            <label>性别</label>
+            <%if(data[0].ssex==0){%>
+            <label class="radio-inline">
+                <input type="radio" name="ssex" value="0" checked>女
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="ssex" value="1">男
+            </label>
+            <%}else{%>
+            <label class="radio-inline">
+                <input type="radio" name="ssex" value="0">女
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="ssex" value="1" checked>男
+            </label>
+            <%}%>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputFile">出生日期</label>
+            <input type="date" id="exampleInputFile" name="sage" class="form-control">
+        </div>
+
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+</main>
+</body>
+</html>
